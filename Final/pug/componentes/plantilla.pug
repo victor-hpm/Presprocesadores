@@ -1,0 +1,9 @@
+doctype html
+html
+	include head.pug
+	include mixins.pug
+	body
+		include header.pug
+		//- le decimos que esta es nuestra plantilla pero lo que esta dentro del header y del footer, es lo que corresponde a cada seccion block contenidos//
+		block contenidos
+		include footer.pug

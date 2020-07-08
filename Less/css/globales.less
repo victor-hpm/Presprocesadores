@@ -1,0 +1,46 @@
+// variables
+@color-primario: #333333;
+@color-claro: #FFFFFF;
+@color-secundario: #8841da;
+@color-variacion: #012179;
+@fuente1: 'Lato', sans-serif;
+@fuente2: 'Oswald', sans-seref;
+@fuente-base: 18px;
+// variables
+
+// mixins
+.sombra-caja{
+	box-shadow: 0px 5px 15px 0px fade(@color-claro, 50%);
+}
+.oswald{
+	font-family: @fuente2;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+// entre parentesis una funcion en less puyede recibir parametros
+.fuente(@font-size){
+	font-size: @font-size;
+	line-height: @font-size + 10%;
+}
+// mixins
+
+
+
+
+*{
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: @fuente1;
+	color: @color-primario;
+	// funcion de less que suma un % del tamaño de la letra base en los interlineados
+	// line-height: @fuente-base + 10%;
+	.fuente(@fuente-base);
+	background-color: @color-primario;
+}
+
+h1,h2,h3 {
+	margin: 0;
+	.oswald;
+}

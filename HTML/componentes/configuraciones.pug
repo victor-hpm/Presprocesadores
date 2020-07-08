@@ -1,0 +1,13 @@
+-var titulos = ["Titulo Principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
+//- -var usuario = "David"
+//- para utilizar un mixin el cual hace que no tengamos que repetir n veces el mismo codigo
+//- si no que lo ponemos asi y lo usamos como variable para que se repita en automatico
+//- y entre parentesis estaran los datos que cambiaran respecto a cada caja y de igual forma se 
+//- ponen en la info de la caja y despues cuando se llaman abajo se les pone igual y en ""
+-var enlaces=['Acerca','Noticias','Contacto']
+mixin caja(imagen,titulo,contenido)
+	.caja
+		.caja__imagen: img(src="images/"+imagen)
+		.caja__contenido
+			h3=titulo
+			p=contenido  

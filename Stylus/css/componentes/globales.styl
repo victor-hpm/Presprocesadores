@@ -1,0 +1,59 @@
+// variables
+fuente1 = 'lato', sans-serif
+fuente2 = 'Oswald', sans-serif
+color-primario = #333333
+color-secundario = #8841da
+color-claro = #FFFFFF
+// variables
+// ------
+// mixins
+contenedor()
+	display flex
+	width 96%
+	margin 0 auto
+	padding 30px 0
+
+caja-sombra()
+	background-color: color-claro
+	box-shadow: 0px 20px 33px 0px rgba(0,0,0,20)
+// mixins
+// ----
+// funciones
+opacidad(color, cantidad)
+	alpha(color,cantidad)
+// funciones
+// -----
+// Loop inicia con la palabra for y una variable que se ocupara en este loop y cuantos pasos queremos que el loop haga
+for header in 3 2 1 
+	// variable provisional h va a contar las veces que el header va a pasar
+	h{header}
+		// lo que queremos definir es el tamaño de nuestros tirulos
+		// lo dejamos en 35px pero empesara con el h1 pero si encuentra un h2
+		// a esos 35px lo reducira 5% del valor de la variable inicial 
+		// la segunda sera 30 y la tercera sera 25
+		// al h1 le dara 35   h1 = 35
+		// al h2 le dara 35 - 5 = 30   h2 = 30 
+		// y al h3 30 -5 =25  h3 = 25
+		font-size: 35px - (5*header)
+		// quitaremos los margin a nuestrso encabezados
+		margin 0
+// Loop
+// -----
+// condiconal
+titulos(Fuente)
+	if Fuente == fuente1
+		font-family: fuente1
+	else 
+		font-family: fuente2
+		font-weight: 600
+		text-transform: uppercase
+// condiconal
+* 
+	box-sizing border-box
+
+body
+	margin: 0
+	// font-family fuente1 lo quitamos por el condicional
+	color color-primario 
+	// mandamos a llamar el condiconal que usamos como funcion
+	titulos(fuente1)

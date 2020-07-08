@@ -1,0 +1,73 @@
+// variables deben de ir en globales porque es le primero que mandamos a llamar
+$fuente1:'Lato',
+sans-serif;
+$fuente2:'Oswald',
+sans-serif;
+$color-primario: #333333;
+$color-claro: #FFFFFF;
+$color-secundario: #8841DA;
+$color-variacion: #3f579a;
+// variables
+// mixins deben de ir en globales porque es le primero que mandamos a llamar
+@mixin caja {
+    border-radius: 20px;
+    box-shadow: 0px 20px 33px 0px rgba(0, 0, 0, 0.50);
+    color: $color-primario;
+    background-color: $color-claro;
+}
+
+// mixin condicional
+@mixin titulos ($Fuente) {
+    // si la fuente es lato no hya problema pero si es oswald le agregamos que el texto sea en mayuscula
+    @if $Fuente==$fuente1 {
+        font-family: $fuente1;
+    }
+    @else {
+        font-family: $fuente2;
+        text-transform: uppercase;
+    }
+}
+
+// mixin condicional si se manda a llamar
+// ------
+// mixins se manda llamar en donde se ociparia con un @include
+// ------
+// funciones en la funcion tu puedes definir que es lo que quieres mandarle al selector 
+// cosa diferente con los mixins ya que en el mixin todo lo que creas en el mixin se imprimira en elsecector donde lo utilices
+@function get-opacity($color, $nivel) {
+    @return rgba($color, $nivel);
+}
+
+// funciones
+// ----
+// Loop con la palabra clabe @each, definimos dos variables heder y size in significa donde van a estar almacenados los valores de esta variable (valores)
+// por ser header size especificamos (h1: 30px, header: size)  
+@each $header,
+$size in (h1: 30px, h2: 25px, h3: 20px) {
+    // #{$header} { se manda a llamar 
+    #{$header} {
+        // propiedades 
+        // font-size: $size; le decimos al loop que para cada  h1 h2 y h3 imprimira la etiqueta size que tenemos aqui()
+        font-size: $size;
+        // y el margin lo borrara
+        margin: 0;
+    }
+}
+
+// Loop no se mandan a llamar
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    // font-family: $fuente1; lo borramos para usar el mixin condicional
+    // @include titulos($fuente1); le mandamos como prametro la $fuente1 que es lato
+    @include titulos($fuente1);
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,28 @@
+//- permite agregar codigo adicional
+extend componentes/plantilla.pug
+//- para decirle que adeicional mentoe tiene que ir lo de abajo
+block contenidos
+		section.intro
+			.intro__imagen: img(src="images/imagen.png")
+			.intro__contenido
+				h2 #{titulos[0]}
+				p
+					|interpolacion significa ue cuando 
+					|estamos en un div que solo tiene 
+					|un elemento hijo podemos ponerlo 
+					|en el mismo renglon 
+					span para el espan con letras negritas
+						|y que de la misma manera pueda estar 
+						|en el mimso parrafo se pone | y se quita el 
+						| . de la p
+				a.boton Leer Mas
+		//- ul
+		//- 	//- each es la palabra recerbada para un loop y no repetir codigo en el caso de las targetas 
+		//- 	each titulo in titulos
+		//- 		li=titulo
+		main.contenido
+			//- mandamos a llamar al mixin con un +nombreDelMixin
+			+caja('imagen.png', titulos[1],'lo mas importante de pug es la indentacion y los espacion, otra cosa importante es que a un elemento le podemos poner una clase poniendo nombre.classe')
+			+caja('imagen.png', titulos[2],'lo mas importante de pug es la indentacion y los espacion, otra cosa importante es que a un elemento le podemos poner una clase poniendo nombre.classe')
+			+caja('imagen.png', titulos[3],'lo mas importante de pug es la indentacion y los espacion, otra cosa importante es que a un elemento le podemos poner una clase poniendo nombre.classe')
+

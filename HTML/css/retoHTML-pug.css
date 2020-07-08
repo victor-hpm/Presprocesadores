@@ -1,0 +1,28 @@
+.home-contenido {
+    display: flex;
+    height: calc(100vh - 200px);
+}
+
+.menu {
+    padding: 80px 50px;
+    flex: 1 1 25%;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #EEF1F7;
+}
+
+.menu ul {
+    padding-left: 0;
+}
+
+.menu li {
+    margin: 20px 0;
+    list-style: none;
+    color: #012179;
+}
+
+.home-contenido .intro {
+    background-color: #ffffff;
+}
+
+```

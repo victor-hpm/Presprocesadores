@@ -1,0 +1,23 @@
+extend componentes/plantilla_copy.pug
+block contenidos
+	.home-contenido
+		.menu
+			h3 Menú
+			ul
+				each enlace in enlaces
+					li= enlace
+
+		.intro
+			intro__contenido
+				h2 #{titulos[0]}
+				p
+					| Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					| Proin ex mi, gravida sit amet imperdiet vel, sodales a mi. 
+					| Proin sit amet tellus nec nisl bibendum ornare nec at augue. 
+					| Integer semper feugiat varius.
+				p.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Proin ex mi, gravida sit amet imperdiet vel, sodales a mi. 
+					Proin sit amet tellus nec nisl bibendum ornare nec at augue. 
+					Integer semper feugiat varius.
+				a.boton Leer Más```

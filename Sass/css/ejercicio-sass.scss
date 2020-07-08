@@ -1,0 +1,7 @@
+// @import "componentes/globales.scss" este debe de ser llamado primero porque contiene las variables y los mixins
+@import "componentes/globales.scss";
+@import "componentes/perfiles.scss";
+@import "componentes/estadisticas.scss";
+@import "componentes/ubicaciones.scss";
+@import "componentes/galerias.scss";
+@import "componentes/articulos.scss";
